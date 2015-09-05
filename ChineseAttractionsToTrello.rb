@@ -21,6 +21,7 @@ def readFile(filename)
 		#puts "#{line}: splited: #{splited}"
 
 		if isInProvince and splited.empty? then
+			provinceData['spot'].sort!
 			data.push(Marshal.load(Marshal.dump(provinceData)))
 			provinceData.clear
 			isInProvince = false
